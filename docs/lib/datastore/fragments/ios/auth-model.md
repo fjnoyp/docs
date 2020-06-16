@@ -112,28 +112,6 @@ _ = Amplify.Auth.fetchAuthSession {
 
 3. During the lifecycle of the app, listen to Auth events to show different views based on the user's state. See [Auth Events](~/lib/auth/auth-events.md) for more details.
 
-4. If the user state becomes signed out during the operation's sync to cloud, you can know exactly which operation failed when the error handler is called. By default, the error will be logged by `Amplify.Logging.error`
-
-```swift
-let configuration = DataStoreConfiguration.custom(errorHandler: { error in
-    Amplify.Logging.error(error: error)
-
-    if let dataStoreError = error as? DataStoreError,
-        case let .api(amplifyError, mutationEventOptional) = dataStoreError,
-        let actualAPIError = amplifyError as? APIError,
-        case let .operationError(_, _, underlyingError) = actualAPIError,
-        let authError = underlyingError as? AuthError,
-        let mutationEvent = mutationEventOptional {
-
-        if case .signedOut = authError {
-            let modelName = mutationEvent.modelName
-            let id = mutationEvent.modelId
-            let mutationType = mutationEvent.mutationType
-            print("The \(mutationType) operation for \(modelName) with \(id) failed due to user signed out.")
-        }
-    }
-})
-```
 
 For more information on related topics:
 
