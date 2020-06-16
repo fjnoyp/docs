@@ -117,7 +117,6 @@ For more information on related topics:
 - [Auth.SignIn](~/lib/auth/signin.md)
 - [Auth.fetchAuthSession](~/lib/auth/getting-started.md#check-the-current-auth-session)
 - [Auth Events](~/lib/auth/auth-events.md)
-- [DataStoreConfiguration handlers](~/lib/datastore/conflict.md)
 
 ## Model owner
 
