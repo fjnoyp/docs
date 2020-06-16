@@ -146,8 +146,8 @@ For more information on related topics:
 
 To check who the owner of the model is, call `DataStore.query` and check the user's username against the owner field. 
 ```swift
-if let user = Amplify.Auth.getCurrentUser() {
-    if user.username == todo.owner {
+if let currentUser = Amplify.Auth.getCurrentUser() {
+    if currentUser.username == todo.owner {
         print("This todo was created by the current user")
     }
 }
