@@ -112,7 +112,6 @@ _ = Amplify.Auth.fetchAuthSession {
 
 3. During the lifecycle of the app, listen to Auth events to show different views based on the user's state. See [Auth Events](~/lib/auth/auth-events.md) for more details.
 
-
 For more information on related topics:
 
 - [Auth.SignIn](~/lib/auth/signin.md)
